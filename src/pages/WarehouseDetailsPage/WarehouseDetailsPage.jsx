@@ -4,6 +4,8 @@ import GenerateInventory from "../../components/GenerateInventory/GenerateInvent
 import GenerateWarehouseDetails from "../../components/GenerateWarehouseDetails/GenerateWarehouseDetails";
 import "./WarehouseDetailsPage.scss";
 
+const siteWarehouse = 'https://alex-instock-server.herokuapp.com/warehouse';
+
 export default class WarehouseDetailsPage extends Component {
   state = {
     currentWarehouse: [],
@@ -15,7 +17,7 @@ export default class WarehouseDetailsPage extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8080/warehouse/${this.warehouseId}`)
+      .get(`${siteWarehouse}${this.warehouseId}`)
       .then((response) => {
         this.setState({
           currentWarehouse: response.data.warehouse,

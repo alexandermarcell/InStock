@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import back from "../../assets/icons/arrow_back-24px.svg";
 import "./EditInventoryPage.scss";
 
+const siteInventory = 'https://alex-instock-server.herokuapp.com/inventory/';
+
 class EditInventoryPage extends Component {
   state = {
     inventoryData: [],
@@ -21,7 +23,7 @@ class EditInventoryPage extends Component {
 
   getInventory = () => {
     axios
-      .get("http://localHost:8080/inventory")
+      .get(siteInventory)
       .then((response) => {
         this.setState({
           inventoryData: response.data,
@@ -33,7 +35,7 @@ class EditInventoryPage extends Component {
   getItem = () => {
     const id = this.props.match.params.id;
     axios
-      .get(`http://localHost:8080/inventory/${id}`)
+      .get(`${siteInventory}${id}`)
       .then((response) => {
         const item = response.data;
         this.setState({
@@ -120,7 +122,7 @@ class EditInventoryPage extends Component {
     event.preventDefault();
     const id = this.props.match.params.id;
     if (this.isFormValid()) {
-      axios.patch(`http://localhost:8080/inventory/${id}`, {
+      axios.patch(`${siteInventory}${id}`, {
         warehouseName: event.target.warehouseName.value,
         itemName: event.target.itemName.value,
         description: event.target.description.value,

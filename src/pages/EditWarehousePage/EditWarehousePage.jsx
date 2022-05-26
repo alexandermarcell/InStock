@@ -7,6 +7,8 @@ import errorIcon from "../../assets/icons/error-24px.svg";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 import { Redirect } from "react-router-dom";
 
+const siteWarehouse = 'https://alex-instock-server.herokuapp.com/warehouse/';
+
 class EditWarehousePage extends Component {
   state = {
     isLoaded: false,
@@ -69,7 +71,7 @@ class EditWarehousePage extends Component {
       };
 
       axios
-        .patch(`http://localhost:8080/warehouse/${id}`, finalData)
+        .patch(`${siteWarehouse}${id}`, finalData)
         .then((res) => {
           this.setState({
             redirect: true,
@@ -89,7 +91,7 @@ class EditWarehousePage extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     axios
-      .get(`http://localhost:8080/warehouse/${id}`)
+      .get(`${siteWarehouse}${id}`)
       .then(({ data }) => {
         const warehouse = data.warehouse;
         const { name, address, city, country, contact } = warehouse;

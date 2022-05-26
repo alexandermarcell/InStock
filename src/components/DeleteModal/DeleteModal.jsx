@@ -2,10 +2,12 @@ import "./DeleteModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg";
 import axios from "axios";
 
+const site = 'https://alex-instock-server.herokuapp.com/';
+
 function DeleteModal({ closeModal, id, type, item }) {
   const deleteItem = () => {
     axios
-      .delete(` http://localhost:8080/${type}/${id}`)
+      .delete(` ${site}${type}/${id}`)
       .catch((err) => console.log(err));
     closeModal();
   };

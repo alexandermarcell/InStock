@@ -6,6 +6,8 @@ import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import errorIcon from "../../assets/icons/error-24px.svg";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 
+const siteWarehouse = 'https://alex-instock-server.herokuapp.com/warehouse/';
+
 class AddWarehousePage extends Component {
   state = {
     redirect: false,
@@ -65,7 +67,7 @@ class AddWarehousePage extends Component {
       };
 
       axios
-        .post(`http://localhost:8080/warehouse`, finalData)
+        .post(siteWarehouse, finalData)
         .then((res) => {
           console.log(res.data);
           this.setState({

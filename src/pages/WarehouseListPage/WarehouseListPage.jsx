@@ -4,6 +4,8 @@ import { Component } from "react";
 import { WarehouseSearch } from "../../components/Searchbar/Searchbar";
 import WarehouseItem from "../../components/WarehouseItem/WarehouseItem";
 
+const siteWarehouse = 'https://alex-instock-server.herokuapp.com/warehouse';
+
 export default class WarehouseListPage extends Component {
   state = {
     warehouses: [],
@@ -28,7 +30,7 @@ export default class WarehouseListPage extends Component {
   };
 
   getWarehouses = () => {
-    axios.get("http://localHost:8080/warehouse").then((response) => {
+    axios.get(siteWarehouse).then((response) => {
       this.setState({
         warehouses: response.data,
       });
@@ -41,7 +43,7 @@ export default class WarehouseListPage extends Component {
 
   componentDidUpdate() {
     axios
-      .get("http://localhost:8080/warehouse")
+      .get(siteWarehouse)
       .then((response) => {
         if (
           JSON.stringify(response.data) !==

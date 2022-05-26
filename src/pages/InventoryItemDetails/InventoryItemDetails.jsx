@@ -4,7 +4,8 @@ import './InventoryItemDetails.scss';
 import { Link } from 'react-router-dom';
 import editpage from '../../assets/icons/edit-white24px.svg';
 import backarrow from "../../assets/icons/arrow_back-24px.svg";
-const api = 'http://localhost:8080/inventory/';
+
+const siteInventory = 'https://alex-instock-server.herokuapp.com/inventory';
 
 class InventoryItemDetails extends Component {
     state = {
@@ -15,7 +16,7 @@ class InventoryItemDetails extends Component {
 
     componentDidMount() {
         axios
-        .get( `${api}${this.Id}` )
+        .get( `${siteInventory}${this.Id}` )
         .then((response) => {
             this.setState({
                 inDetails: response.data

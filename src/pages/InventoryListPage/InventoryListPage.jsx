@@ -3,6 +3,8 @@ import axios from "axios";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import "./InventoryListPage.scss";
 
+const siteInventory = 'https://alex-instock-server.herokuapp.com/inventory';
+
 export default class InventoryListPage extends React.Component {
   state = {
     inventoryData: [],
@@ -29,7 +31,7 @@ export default class InventoryListPage extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/inventory")
+      .get(siteInventory)
       .then((response) => {
         this.setState({
           inventoryData: response.data,
@@ -40,7 +42,7 @@ export default class InventoryListPage extends React.Component {
 
   componentDidUpdate() {
     axios
-      .get("http://localhost:8080/inventory")
+      .get(siteInventory)
       .then((response) => {
         if (
           JSON.stringify(response.data) !==

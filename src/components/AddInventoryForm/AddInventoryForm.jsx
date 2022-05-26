@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import errorIcon from "../../assets/icons/error-24px.svg";
 import ErrorMsg from "../../components/ErrorMsg/ErrorMsg";
 
+const siteInventory = 'https://alex-instock-server.herokuapp.com/inventory';
+
 class AddInventoryForm extends Component {
   state = {
     inventoryData: [],
@@ -24,7 +26,7 @@ class AddInventoryForm extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/inventory")
+      .get(siteInventory)
       .then((response) => {
         this.setState({
           inventoryData: response.data,
@@ -84,7 +86,7 @@ class AddInventoryForm extends Component {
           stockStatus: true,
         });
 
-        axios.post("http://localhost:8080/inventory", {
+        axios.post(siteInventory, {
           warehouseName: event.target.warehouseName.value,
           itemName: event.target.itemName.value,
           description: event.target.description.value,
@@ -113,7 +115,7 @@ class AddInventoryForm extends Component {
           stockStatus: true,
         });
 
-        axios.post("http://localhost:8080/inventory", {
+        axios.post(siteInventory, {
           warehouseName: event.target.warehouseName.value,
           itemName: event.target.itemName.value,
           description: event.target.description.value,
