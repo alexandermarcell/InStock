@@ -1,0 +1,21 @@
+@use "./styles/partials/_variables.scss" as *;
+@use "./styles/partials/_fonts.scss" as *;
+@use "./styles/partials/_mixins.scss" as *;
+@use "./styles/partials/_reset.scss" as *;
+@use "./styles/partials/_colors.scss" as *;
+@use "./styles/partials/_function.scss" as *;
+
+body {
+  font-family: $titillium;
+  background-color: $lightgrey;
+}
+
+.padder {
+  width: 100%;
+  background-color: $graphite;
+  height: 4rem;
+  position: absolute;
+  @include tablet {
+    height: 6rem;
+  }
+}

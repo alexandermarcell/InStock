@@ -1,0 +1,166 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/function" as *;
+
+
+.edit-warehouse-modal {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  margin: 0 2rem 1rem 2rem;
+  z-index: 1;
+  position: relative;
+  background-color: $white;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {
+    margin: 0 2.25rem;
+  }
+
+  @include desktop {
+    width: toRem(1020);
+    margin: 0 auto;
+}
+
+  &__header {
+    display: flex;
+    border-bottom: 1px solid $cloud;
+    align-items: center;
+    padding: 0 1rem toRem(7) 1rem;
+  }
+
+  &__header-image {
+
+    &:hover {
+      @include slideAnimation;
+    }
+  }
+
+  &__heading {
+    padding: 1.5rem 0 1.5rem 1rem;
+    @include page-header;
+    font-family: $titillium;
+    font-weight: $bold;
+  }
+
+  &__form {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__information-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 1.5rem 0;
+    }
+  }
+
+  &__label {
+    @include label-button;
+    font-weight: $bold;
+  }
+
+  &__input {
+    @include mobile-form;
+    width: 100%;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    font-family: $titillium;
+    background-color: $lightgrey;
+    border: 1px solid $cloud;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $instockindigo;
+    }
+
+    &--error {
+      @include mobile-form;
+      width: 100%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      font-family: $titillium;
+      background-color: $lightgrey;
+      border: 1px solid $red;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $red;
+      }
+    }
+  }
+
+  &__information-title {
+    margin: 1.5rem 0 1rem 0;
+    font-family: $titillium;
+    @include subheader;
+    font-weight: $bold;
+  }
+
+  &__button-container {
+    display: flex;
+    background-color: $lightgrey;
+    padding: 1rem;
+    border-bottom: $lightgrey;
+    border-radius: 0 0 3px 3px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cancel-button {
+    border: 1px solid $cloud;
+    color: $slate;
+    margin-right: 1rem;
+
+    &:hover {
+      border: 1px solid $instockindigo;
+      color: $instockindigo;
+    }
+  }
+
+  &__save-button {
+    background-color: $instockindigo;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $graphite;
+    }
+  }
+
+  &__cancel-button, &__save-button {
+    @include mobile-button;
+    @include label-button;
+    font-family: $titillium;
+  }
+
+  &__warehouse-details, &__contact-details {
+    font-family: $titillium;
+    width: 100%;
+    padding: 0 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__warehouse-details {
+    border-bottom: 1px solid $cloud;
+
+    @include tablet {
+      border-bottom: none;
+      border-right: 1px solid $cloud;
+    }
+  }
+}

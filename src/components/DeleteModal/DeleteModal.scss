@@ -1,0 +1,186 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/reset" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal__wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  width: 75%;
+  padding: 0 1rem;
+
+  &__txt {
+    @include page-header();
+    display: flex;
+    margin-bottom: 1rem;
+  }
+}
+
+.modal__btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.3125rem;
+  border: none;
+  background-color: $white;
+  cursor: pointer;
+
+  &-btn {
+    background-color: $white;
+    border: none;
+  }
+}
+
+.body {
+  display: flex;
+  padding: 0 1rem;
+  font-size: 0.9375rem;
+  font-size: 1.7rem;
+
+  &__txt {
+    @include body-large;
+  }
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__cancel {
+  @include label-button;
+  font-family: titillium web;
+  width: 10.1875rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  margin-right: 1.0625rem;
+  margin-bottom: 1.5rem;
+  border: 0.0625rem solid #bdc5d5;
+  margin-left: 1rem;
+}
+
+.footer__delete {
+  @include label-button;
+  font-family: titillium web;
+  width: 10.1875rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #c94515;
+  color: white;
+  border: none;
+}
+
+// styling for tablet & desktop
+@include tablet {
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(19, 24, 44, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .modal__wrapper {
+    margin: 11.5625rem auto;
+    width: 42rem;
+    height: 16.375rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5625rem;
+    border-radius: 0.25rem;
+  }
+
+  .title {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    &__txt {
+      @include page-header;
+    }
+  }
+
+  .modal__btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    border: none;
+    cursor: pointer;
+
+    &-btn {
+      background-color: $white;
+      border: none;
+    }
+  }
+
+  .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+
+    &__txt {
+      @include body-large;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .footer__cancel {
+    @include label-button;
+    width: 4.4375rem;
+    height: 2.375rem;
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    margin-right: 1.0625rem;
+    margin-bottom: 1.5rem;
+    border: 0.0625rem solid #bdc5d5;
+  }
+
+  .footer__delete {
+    @include label-button;
+    width: 4.4375rem;
+    height: 2.375rem;
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    margin-right: 1.0625rem;
+    margin-bottom: 1.5rem;
+    background-color: #c94515;
+    color: white;
+    border: none;
+  }
+}

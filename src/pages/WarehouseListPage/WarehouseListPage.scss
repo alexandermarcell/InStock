@@ -1,0 +1,12 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+
+.warehouse {
+    
+    @include tablet {
+        margin: 0 auto;
+    }
+
+}
+

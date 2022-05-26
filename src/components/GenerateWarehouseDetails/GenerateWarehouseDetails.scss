@@ -1,0 +1,129 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+
+
+.details {
+        max-width: 1020px;
+        @include tablet {
+            margin: 0 auto;
+        }
+        
+    &__header {
+        display: flex;
+
+        justify-content: space-between;
+        padding: 1.5rem 1rem;
+        background-color: white;
+        border-bottom: 1px solid $cloud;
+        z-index: 1;
+        position: relative;
+        margin: 0 1rem;
+        box-shadow: 0px 2px 5px 0px #13182c1a;
+        border-radius: 3px 3px 0 0;
+        
+        @include tablet {
+            padding: 1.8rem 2rem;
+            margin: 0;
+        }
+    }
+
+    &__header-icon {
+        &:hover {
+            @include slideAnimation;
+        }
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        
+    }
+
+    &__btn {
+        background-color: $instockindigo;
+        border: none;
+        border-radius: 360%;
+        padding: 1rem;
+        width: 2rem;
+        height: 24px;
+        background-image: url('../../assets/icons/edit-white24px.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include tablet {
+            
+            background-position: 15% ;
+            @include mobile-button;
+        }
+    }
+
+    &__btn-text {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+            font-weight: 600;
+            width: 3rem;
+        }
+    }
+    
+    &__contact {
+        background-color: white;
+        padding: 0 1rem;            
+        margin: 0 1rem;
+        border-bottom: 1px solid $cloud;
+        z-index: 1;
+        position: relative;
+        box-shadow: 0px 2px 5px 0px #13182c1a;
+        @include body-small;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0.5rem 2rem 0.5rem 2rem;
+        }
+    }
+    
+    &__address {
+        padding: 1rem 0 0.5rem 0rem;
+        text-align: left;
+
+        @include tablet {
+            flex-basis: 40%;
+            border-right: 1px solid $cloud;
+        }
+    }
+
+    &__split {
+        display: flex;
+        padding: 1rem 0;
+        flex: 1;
+        text-align: left;
+
+        @include tablet {
+            padding-left: 3rem;
+        }        
+    }
+
+    &__name {
+        flex-basis: 50%;
+    }
+
+    &__email {
+        flex-basis: 50%;
+    }
+
+    &__subhead {
+        padding-bottom: 0.5rem;
+        font-weight: 600;
+        color: #5c667e;
+    }
+}
+

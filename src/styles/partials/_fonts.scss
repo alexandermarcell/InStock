@@ -1,0 +1,16 @@
+@use "./_variables.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Tangerine&family=Titillium+Web:wght@400;600&display=swap");
+
+body {
+  font-family: "titillium web";
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $bold;
+}
+
+p {
+  font-weight: $regular;
+}

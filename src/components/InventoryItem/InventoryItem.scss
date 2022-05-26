@@ -1,0 +1,208 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.inventory {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+  &__all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__tblt-list {
+    display: none;
+    @include tablet {
+      display: flex;
+      width: 100%;
+      background-color: rgba(247, 248, 249, 0.7);
+      justify-content: space-between;
+      padding-left: toRem(32);
+      padding-right: toRem(32);
+      padding-top: toRem(8);
+      padding-bottom: toRem(8);
+      margin-top: toRem(8);
+    }
+    &--item {
+      display: flex;
+      align-items: center;
+      @include table-header;
+      color: $slate;
+      font-weight: 600;
+      width: 100%;
+    }
+
+    &--title {
+      display: flex;
+      align-items: center;
+      @include table-header;
+      color: $slate;
+      font-weight: 600;
+    }
+  }
+
+  &__tblt-icon {
+    filter: invert(36%) sepia(21%) saturate(530%) hue-rotate(185deg)
+      brightness(100%) contrast(84%);
+    width: toRem(16);
+    margin-left: toRem(7);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: toRem(16);
+    border-top: solid 1px $cloud;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list-left {
+    margin-right: 20%;
+    margin-left: toRem(24);
+  }
+
+  &__list-right {
+    margin-right: 20%;
+  }
+
+  &__list-item--container {
+    display: flex;
+    align-items: center;
+    @include tablet {
+      width: toRem(104);
+    }
+  }
+
+  &__list-group {
+    margin-bottom: toRem(16);
+    @include tablet {
+    }
+  }
+
+  &__list-item {
+    color: $instockindigo;
+    @include label-button;
+    font-weight: 600;
+  }
+
+  &__list-icon {
+    width: toRem(17);
+    margin-left: toRem(4);
+    filter: invert(31%) sepia(89%) saturate(4041%) hue-rotate(218deg)
+      brightness(97%) contrast(85%);
+  }
+
+  &__list-title {
+    @include table-header;
+    font-weight: 600;
+    color: $slate;
+    margin-bottom: toRem(4);
+    width: max-content;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list-info {
+    @include body-medium;
+    font-weight: 400;
+    color: $instockblack;
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__in-stock {
+    @include in-stock;
+    @include table-header;
+    font-weight: 600;
+    text-align: center;
+    @include tablet {
+      width: toRem(65);
+    }
+  }
+
+  &__out-stock {
+    @include out-of-stock;
+    @include table-header;
+    font-weight: 600;
+    text-align: center;
+    width: max-content;
+  }
+
+  &__icon-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    @include layout;
+    padding-bottom: toRem(27);
+    @include tablet {
+      padding-bottom: 0;
+      align-items: center;
+      justify-content: normal;
+      margin: 0;
+      width: auto;
+    }
+  }
+
+  &__icon-delete {
+    margin-left: toRem(24);
+    @include tablet {
+      margin: 0;
+      margin-right: toRem(16);
+    }
+  }
+
+  &__icon-edit {
+    margin-right: toRem(24);
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__tblt-list--results {
+    display: none;
+    @include tablet {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding-left: toRem(32);
+      padding-right: toRem(32);
+      padding-top: toRem(18);
+      padding-bottom: toRem(18);
+      border-bottom: 1px solid $cloud;
+    }
+
+    &:hover {
+      background-color: rgba(46, 102, 230, 0.07);
+    }
+  }
+
+  &__list-item--link {
+    text-decoration: none;
+    @include label-button;
+    display: flex;
+  }
+}

@@ -1,0 +1,52 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: auto;
+  @include layout;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 1px solid $cloud;
+  z-index: 1;
+  position: relative;
+  background-color: $white;
+  display: flex;
+  padding: toRem(32) toRem(28) toRem(24);
+  @include tablet {
+    padding: toRem(32) toRem(44) toRem(24);
+  }
+  @include desktop {
+    max-width: toRem(1020);
+    padding: toRem(45) toRem(44) toRem(32);
+  }
+  &__icon {
+    margin-top: toRem(7);
+    margin-right: toRem(8);
+    &:hover {
+      @include slideAnimation;
+    }
+  }
+  &__header {
+    @include page-header;
+    color: $instockblack;
+    font-weight: 600;
+  }
+}
+
+.overlay {
+  width: 100%;
+  background-color: $graphite;
+  height: 4rem;
+  position: absolute;
+  @include tablet {
+    height: 6rem;
+  }
+}

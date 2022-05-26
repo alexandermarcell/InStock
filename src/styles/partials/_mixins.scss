@@ -1,0 +1,167 @@
+@use "./_function.scss" as *;
+@use "./_colors.scss" as *;
+@use "./_variables.scss" as *;
+
+/*Responsiveness*/
+@mixin tablet {
+  @media screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+/*Type Kit*/
+@mixin page-header {
+  font-size: toRem(28);
+  line-height: toRem(36);
+  @include tablet {
+    font-size: toRem(32);
+    line-height: toRem(40);
+  }
+}
+
+@mixin subheader {
+  font-size: toRem(20);
+  line-height: toRem(28);
+  @include tablet {
+    font-size: toRem(24);
+    line-height: toRem(32);
+  }
+}
+
+@mixin label-button {
+  font-size: toRem(13);
+  line-height: toRem(20);
+  @include tablet {
+    font-size: toRem(14);
+    line-height: toRem(22);
+  }
+}
+
+@mixin table-header {
+  font-size: toRem(11);
+  line-height: toRem(16);
+  @include tablet {
+    font-size: toRem(12);
+    line-height: toRem(18);
+  }
+}
+
+@mixin body-large {
+  font-size: toRem(15);
+  line-height: toRem(26);
+  @include tablet {
+    font-size: toRem(16);
+    line-height: toRem(28);
+  }
+}
+
+@mixin body-medium {
+  font-size: toRem(13);
+  line-height: toRem(20);
+  @include tablet {
+    font-size: toRem(14);
+    line-height: toRem(22);
+  }
+}
+
+@mixin body-small {
+  font-size: toRem(11);
+  line-height: toRem(16);
+  @include tablet {
+    font-size: toRem(12);
+    line-height: toRem(18);
+  }
+}
+
+/*Layout Grid*/
+@mixin layout {
+  margin: 0 toRem(16);
+  @include tablet {
+    margin: 0 toRem(32);
+  }
+  @include desktop {
+    margin: 0 auto;
+  }
+}
+
+//Vertical Padding (Gutters)
+@mixin mobile-gutter {
+  padding-right: toRem(16);
+  @include tablet {
+    padding-right: toRem(24);
+  }
+  @include desktop {
+    padding-right: toRem(24);
+  }
+}
+
+//Buttons
+@mixin mobile-button {
+  width: 100%;
+  height: toRem(36);
+  padding: 0 toRem(16);
+  border-radius: toRem(20);
+
+  @include tablet {
+    width: auto;
+    height: toRem(38);
+  }
+}
+
+//Form Fields
+@mixin mobile-form {
+  width: 100%;
+  height: toRem(36);
+  padding: 0 toRem(16);
+  border-radius: toRem(20);
+
+  @include tablet {
+    width: 100%;
+    height: toRem(38);
+  }
+}
+
+//Tags
+@mixin in-stock {
+  padding: toRem(4) toRem(8);
+  color: $green;
+  background: rgba(21, 132, 99, 0.07);
+  border-radius: toRem(20);
+  @include tablet {
+    height: toRem(26);
+  }
+}
+
+@mixin out-of-stock {
+  height: toRem(24);
+  padding: toRem(4) toRem(8);
+  color: $red;
+  background-color: rgba(201, 69, 21, 0.07);
+  border-radius: toRem(20);
+  @include tablet {
+    height: toRem(26);
+  }
+}
+
+// Animations
+
+@mixin slideAnimation {
+  @keyframes slideOut {
+    from {
+      transform: translateX(0px);
+    }
+     to {
+       transform: translateX(-4px);
+     }
+  }
+
+  animation-name: slideOut;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}

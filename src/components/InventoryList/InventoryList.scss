@@ -1,0 +1,113 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.inventory-list {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px 0px #13182c1a;
+    background-color: $white;
+
+    @include layout;
+    @include desktop {
+      max-width: toRem(1020);
+    }
+  }
+
+  &__subheader {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 toRem(24);
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include page-header;
+    color: $instockblack;
+    font-weight: $bold;
+    margin-top: toRem(32);
+    margin-bottom: toRem(16);
+    @include tablet {
+      margin-left: toRem(8);
+    }
+  }
+
+  &__search {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      margin-top: toRem(16);
+      align-items: flex-end;
+      position: relative;
+    }
+  }
+
+  &__searchbar {
+    height: toRem(36);
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid $cloud;
+    padding-left: toRem(16);
+    @include tablet {
+      height: toRem(38);
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    &:focus {
+      border: 1px solid $instockindigo;
+      outline: none;
+    }
+  }
+
+  &__searchicon {
+    filter: invert(36%) sepia(21%) saturate(530%) hue-rotate(185deg)
+      brightness(100%) contrast(84%);
+    position: absolute;
+    right: 3.5rem;
+    top: 5.75rem;
+    @include tablet {
+      right: 54%;
+      top: 45%;
+    }
+  }
+
+  &__button {
+    @include mobile-button;
+    text-decoration: none;
+    text-align: center;
+    margin-top: toRem(16);
+    margin-bottom: toRem(24);
+    background-color: $instockindigo;
+    color: $white;
+    @include label-button;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    @include tablet {
+      margin-top: toRem(16);
+      margin-bottom: 0;
+      margin-left: toRem(16);
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: $graphite;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+
+.warehouse {
+
+    &__search {
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        margin: 0 1rem;
+        border-radius: 3px 3px 0 0;
+
+        @include tablet {
+            margin: 0 2rem;
+            display: flex;
+            align-items: baseline;
+            height: 6rem;
+        }
+        
+    }
+
+    &__search-header {
+        font-size: 1.75rem; 
+        line-height: 2.25rem;
+        color: #13182c;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding: 1.5rem 1rem 0 1rem;
+        @include tablet {
+            display: flex;
+            padding: 0rem 2rem 0 2rem;
+            align-items: center;
+            flex: 0.8;
+            margin-top: 2rem;
+        }
+    }
+
+    &__search-container {
+        @include tablet {
+            margin: 0 auto;
+            max-width: 1080px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 0 1rem;
+
+        @include tablet {
+            flex-direction: row;
+            align-content: center;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+    }
+
+    &__form-input {
+        @include mobile-form;
+        border: 1px solid $cloud;
+        background-image: url('../../assets/icons/search-24px.svg');
+        background-repeat: no-repeat;
+        background-position: 95%;
+
+        @include tablet {
+            flex: 0 0 200px;
+        }
+    }
+
+    &__search-btn {
+        @include mobile-button;
+        background-color: $instockindigo;
+        color: $white;
+        border-width: 0;
+        box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;       
+        white-space: nowrap;
+
+        &:hover {
+            background-color: #13182c;
+        }
+
+        @include tablet {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+    }
+}

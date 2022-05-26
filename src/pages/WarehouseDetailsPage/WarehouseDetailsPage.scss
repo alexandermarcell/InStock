@@ -1,0 +1,25 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/function' as *;
+
+
+.warehouse__body {
+
+    @include desktop {
+        width: toRem(1020);
+        margin: 0 auto;
+    }
+}
+
+
+.warehouse__bg {
+    width: 100%;
+    background-color: $graphite;
+    height: 4rem;
+    position: absolute;
+    
+    @include tablet {
+      height: 6rem;
+    }
+
+}

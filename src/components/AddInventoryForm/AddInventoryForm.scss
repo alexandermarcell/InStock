@@ -1,0 +1,234 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+.invform {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__form-all {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__details-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $cloud;
+    @include tablet {
+      width: 100%;
+      border-right: 1px solid $cloud;
+      border-bottom: none;
+      margin-bottom: toRem(24);
+      margin-top: toRem(16);
+    }
+  }
+
+  &__details-contents {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: toRem(24);
+    margin: toRem(0) toRem(24);
+    @include tablet {
+      margin: toRem(0) toRem(32);
+    }
+    @include desktop {
+      margin: toRem(0) toRem(40);
+    }
+  }
+
+  &__availability-contents {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: toRem(24);
+    margin: toRem(0) toRem(24);
+    @include tablet {
+      margin-right: toRem(32);
+      margin-top: toRem(16);
+      width: 100%;
+    }
+    @include desktop {
+      margin: toRem(0) toRem(40);
+    }
+  }
+
+  &__details-header {
+    color: $instockblack;
+    @include subheader;
+    font-weight: 600;
+    margin: toRem(16) toRem(0) toRem(24);
+  }
+
+  &__label {
+    @include label-button;
+    color: $instockblack;
+    font-weight: 600;
+    padding-bottom: toRem(4);
+  }
+
+  &__input-description {
+    height: toRem(36);
+    padding: toRem(8) toRem(16) toRem(0);
+    margin-bottom: toRem(16);
+    border-radius: toRem(20);
+    border: 1px solid $cloud;
+    height: toRem(120);
+    resize: none;
+
+    &:focus {
+      border: 1px solid $instockindigo;
+      outline: none;
+    }
+  }
+
+  &__category-container {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+    top: 0.35rem;
+  }
+
+  &__radio-container {
+    display: flex;
+    margin-bottom: toRem(8);
+  }
+
+  &__radio-input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &--icon {
+      margin: 0 toRem(13) 0 0;
+    }
+
+    &--label {
+      @include body-medium;
+      color: $instockblack;
+    }
+  }
+
+  &__warehouse-container {
+    position: relative;
+  }
+
+  &__button-container {
+    background-color: $lightgrey;
+    padding: toRem(16) toRem(24);
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    @include tablet {
+      justify-content: flex-end;
+      box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  &__button-link {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__button-cancel {
+    @include mobile-button;
+    @include label-button;
+    width: 95%;
+    font-weight: 600;
+    border: 1px solid $cloud;
+    background-color: $white;
+    color: $slate;
+    height: toRem(36);
+    @include tablet {
+      height: toRem(38);
+    }
+
+    &:hover {
+      color: $instockindigo;
+      border: 1px solid $instockindigo;
+    }
+  }
+
+  &__button-submit {
+    @include mobile-button;
+    @include label-button;
+    width: 95%;
+    font-weight: 600;
+    border: none;
+    background-color: $instockindigo;
+    color: $white;
+    height: toRem(36);
+    @include tablet {
+      height: toRem(38);
+      margin-left: toRem(16);
+    }
+
+    &:hover {
+      background-color: $instockblack;
+    }
+  }
+
+  &__tblt-split {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+input {
+  height: toRem(36);
+  padding: toRem(0) toRem(16);
+  margin-bottom: toRem(16);
+  border-radius: toRem(20);
+  border: 1px solid $cloud;
+  @include tablet {
+    height: toRem(38);
+    margin-bottom: toRem(24);
+  }
+  &:focus {
+    border: 1px solid $instockindigo;
+    outline: none;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  @include mobile-form;
+  border: 1px solid $cloud;
+  color: $cloud;
+  background: $white;
+  @include tablet {
+    height: toRem(38);
+    margin-bottom: toRem(24);
+  }
+
+  &:focus {
+    border: 1px solid $instockindigo;
+    outline: none;
+    color: $instockblack;
+  }
+}
+
+::placeholder {
+  font-family: $titillium;
+}

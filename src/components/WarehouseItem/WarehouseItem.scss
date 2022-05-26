@@ -1,0 +1,168 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+
+.warehouse{
+
+    &__list {
+        @include body-small;
+        padding: 0 1rem;
+        
+        @include tablet {
+            padding: 0 2rem;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        
+    }
+
+    &__header {
+        display: none;
+        @include tablet {
+        display: flex;
+        color:#5c667e;
+        flex: 1;
+        @include body-small;
+        justify-content: space-between;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+        padding: 0rem 2rem;
+
+        p {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            }
+        }    
+        
+        &-svg {
+        height: 14px;
+        width: 14px;
+    }
+    }
+
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.5rem 1rem 1.5rem ;
+        border-bottom: 1px solid $cloud;
+        background-color: $white;
+        max-width: toRem(1020);
+        box-shadow: 0px 2px 5px 0px #13182c1a;
+
+        &:hover {
+            background-color: rgba(46, 102, 230, 0.07);
+        }
+
+        @include tablet {
+            flex-direction: row;
+            padding: 1rem 2rem;
+            justify-content: space-between;
+            max-width: toRem(1020);
+        }
+    }
+
+    &__main {
+        display: flex;
+        text-align: left;
+        max-width: toRem(1020);
+        
+        @include tablet {
+            flex-basis: 85%;
+        }
+    }
+
+    &__subhead {
+        color: $slate;
+        font-weight: 600;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__info {
+        flex: 1;
+        text-align: left;
+        max-width: toRem(1020);
+        @include tablet {
+            display: flex;
+            flex-basis: 90%;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-weight: 600;
+        @include label-button;
+
+        @include tablet {
+            width: 45%;
+        }
+    }
+
+    &__info-name {
+        color: $instockindigo;
+        text-decoration: none;
+        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+    }
+
+
+    &__info-address {
+        padding-top: 0.5rem;
+        width: 5.5rem;
+        @include body-medium;
+        
+        @include tablet {
+            flex-grow: 0.6;
+            text-align: left;
+        }
+    }
+
+    &__contact {
+        flex: 1;
+        text-align: left;
+        @include tablet {
+            display: flex;
+            text-align: center;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &__contact-name {
+        padding-bottom: 1rem;
+
+        @include body-medium;
+        padding-top: 0.5rem;
+
+        @include tablet {
+            padding-left: 1rem;
+        }
+    }
+
+    &__contact-phone {
+        padding-top: 0.5rem;
+        @include body-medium;
+    }
+
+    &__contact-email {
+        @include body-medium;
+    }
+
+    &__buttons {
+        display: flex;
+        padding: 1rem 0;
+        gap: 0.5rem;
+        justify-content: space-between;
+        align-items: center;    
+    }
+
+    &__tablet {
+
+        @include tablet {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/reset" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/reset" as *;
+
+.error {
+  color: $red;
+  display: flex;
+  @include body-small;
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  padding-right: 0.25rem;
+}

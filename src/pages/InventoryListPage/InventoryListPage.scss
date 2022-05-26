@@ -1,0 +1,10 @@
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+
+.page {
+
+  &-content {
+    z-index: 1;
+    position: relative;
+  }
+}
